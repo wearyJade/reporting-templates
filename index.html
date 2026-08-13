@@ -4,111 +4,184 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tillståndsrapportering</title>
+  <title>choose your report</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    html, body {
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
-      color: #222;
+      background: #f4f3ea;
+      color: #111111;
     }
 
-    .container {
-      max-width: 700px;
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .page {
+      max-width: 760px;
       margin: 0 auto;
-      padding: 30px 20px;
+      padding: 55px 28px 80px 28px;
     }
 
     h1 {
-      font-size: 30px;
-      margin-bottom: 10px;
+      font-size: 38px;
+      font-weight: normal;
+      margin: 0 0 35px 0;
+      letter-spacing: -1px;
+      text-transform: lowercase;
     }
 
-    .intro {
-      margin-bottom: 30px;
-      color: #555;
+    hr {
+      border: 0;
+      border-top: 1px solid #777;
+      margin: 0 0 30px 0;
     }
 
-    .report-card {
-      background: white;
-      border: 1px solid #ccc;
-      padding: 22px;
-      margin-bottom: 20px;
-      border-radius: 8px;
+    .report-list {
+      margin-top: 10px;
     }
 
-    .report-card h2 {
-      margin-top: 0;
+    .report {
+      padding: 15px 0;
+      border-bottom: 1px dotted #999;
+    }
+
+    .report a {
+      color: #0000cc;
+      text-decoration: underline;
       font-size: 22px;
-    }
-
-    .report-card p {
-      color: #555;
-    }
-
-    button {
-      background: #222;
-      color: white;
-      border: none;
-      padding: 14px 20px;
-      font-size: 17px;
-      border-radius: 6px;
       cursor: pointer;
     }
 
-    button:active {
-      background: #555;
+    .report a:visited {
+      color: #551a8b;
     }
 
-    .future {
-      opacity: 0.5;
+    .report a:hover {
+      color: #cc0000;
+    }
+
+    .coming-soon {
+      color: #666666;
+      font-size: 15px;
+      margin-left: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .footer {
+      margin-top: 55px;
+      padding-top: 10px;
+      border-top: 1px solid #777;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      color: #555555;
+    }
+
+    .tiny {
+      font-size: 11px;
+    }
+
+    /* Rapportvyn är dold tills vi börjar bygga den */
+    #boras-report {
+      display: none;
+    }
+
+    .back-link {
+      color: #0000cc;
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    @media screen and (max-width: 600px) {
+
+      .page {
+        padding: 35px 22px 60px 22px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .report a {
+        font-size: 21px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <!-- STARTSIDA -->
 
-    <h1>Tillståndsrapportering</h1>
+  <div class="page" id="home">
 
-    <p class="intro">
-      Välj vilken typ av rapport du vill skapa.
-    </p>
+    <h1>choose your report</h1>
 
-    <div class="report-card">
+    <hr>
 
-      <h2>Tillståndsrapport</h2>
+    <div class="report-list">
 
-      <p>
-        Dokumentation av ett objekts aktuella tillstånd,
-        med fotografi, skadebeskrivningar och markeringar.
-      </p>
+      <div class="report">
+        <a onclick="openBorasReport()">borås-tillståndsrapport</a>
+      </div>
 
-      <button onclick="startReport()">
-        Skapa rapport
-      </button>
+      <div class="report">
+        <a onclick="notReady()">condition-report</a>
+        <span class="coming-soon">[kommer senare]</span>
+      </div>
+
+      <div class="report">
+        <a onclick="notReady()">iteration-report</a>
+        <span class="coming-soon">[kommer senare]</span>
+      </div>
 
     </div>
 
-    <div class="report-card future">
-
-      <h2>Fler rapporttyper</h2>
-
-      <p>
-        Fler rapportmallar kan läggas till senare.
-      </p>
-
+    <div class="footer">
+      reporting templates<br>
+      <span class="tiny">best viewed on an unnecessarily old ipad</span>
     </div>
 
   </div>
 
+
+  <!-- BORÅS-RAPPORT -->
+
+  <div class="page" id="boras-report">
+
+    <a class="back-link" onclick="goHome()">← tillbaka</a>
+
+    <h1 style="margin-top:35px;">borås-tillståndsrapport</h1>
+
+    <hr>
+
+    <p>
+      rapportformuläret bygger vi här.
+    </p>
+
+  </div>
+
+
   <script>
 
-    function startReport() {
-      alert("Rapportformuläret bygger vi i nästa steg!");
+    function openBorasReport() {
+      document.getElementById("home").style.display = "none";
+      document.getElementById("boras-report").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+    function goHome() {
+      document.getElementById("boras-report").style.display = "none";
+      document.getElementById("home").style.display = "block";
+      window.scrollTo(0, 0);
+    }
+
+    function notReady() {
+      alert("den här rapporten bygger vi en annan gång :)");
     }
 
   </script>
