@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tillståndsrapportering</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #222;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      margin-bottom: 30px;
+      color: #555;
+    }
+
+    .report-card {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 22px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    .report-card h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .report-card p {
+      color: #555;
+    }
+
+    button {
+      background: #222;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      font-size: 17px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:active {
+      background: #555;
+    }
+
+    .future {
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Tillståndsrapportering</h1>
+
+    <p class="intro">
+      Välj vilken typ av rapport du vill skapa.
+    </p>
+
+    <div class="report-card">
+
+      <h2>Tillståndsrapport</h2>
+
+      <p>
+        Dokumentation av ett objekts aktuella tillstånd,
+        med fotografi, skadebeskrivningar och markeringar.
+      </p>
+
+      <button onclick="startReport()">
+        Skapa rapport
+      </button>
+
+    </div>
+
+    <div class="report-card future">
+
+      <h2>Fler rapporttyper</h2>
+
+      <p>
+        Fler rapportmallar kan läggas till senare.
+      </p>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function startReport() {
+      alert("Rapportformuläret bygger vi i nästa steg!");
+    }
+
+  </script>
+
+</body>
+</html>
