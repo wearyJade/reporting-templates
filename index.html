@@ -11,62 +11,54 @@
       margin: 0;
       padding: 0;
       background: #f4f3ea;
-      color: #111111;
+      color: #111;
     }
 
     body {
       font-family: "Times New Roman", Times, serif;
       font-size: 18px;
-      line-height: 1.4;
     }
 
     .page {
       max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 28px 55px 28px;
+      margin: 30px auto;
+      padding: 34px 28px 38px 28px;
+      border: 3px double #8b8b72;
+      position: relative;
     }
 
-    .micro-nav {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 10px;
-      letter-spacing: 1px;
-      text-transform: lowercase;
-      margin-bottom: 22px;
-      color: #555;
+    .corner-star {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-size: 18px;
+      color: #b98a9d;
+      animation: blink 1.4s steps(2, start) infinite;
     }
 
-    .micro-nav span {
-      margin-right: 16px;
+    @keyframes blink {
+      50% { opacity: 0.2; }
     }
 
     h1 {
       font-size: 42px;
       font-weight: normal;
-      margin: 0 0 10px 0;
+      margin: 0 0 34px 0;
       letter-spacing: -1px;
       text-transform: lowercase;
     }
 
-    .subline {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      color: #666;
-      margin-bottom: 28px;
-    }
-
     .report-list {
-      margin-top: 12px;
-      border-top: 1px solid #777;
+      border-top: 1px solid #888;
     }
 
     .report {
-      padding: 16px 4px;
-      border-bottom: 1px dotted #777;
-      position: relative;
+      padding: 18px 4px;
+      border-bottom: 1px dotted #888;
     }
 
     .report a {
-      color: #111111;
+      color: #111;
       text-decoration: none;
       font-size: 22px;
       cursor: pointer;
@@ -74,41 +66,6 @@
 
     .report a:hover {
       text-decoration: underline;
-      color: #0000aa;
-    }
-
-    .report a:active {
-      color: #cc0000;
-    }
-
-    .active-dot {
-      display: inline-block;
-      margin-left: 10px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      color: #cc0000;
-      animation: blink 1.2s steps(2, start) infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
-    .meta {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 10px;
-      color: #777;
-      margin-top: 4px;
-    }
-
-    .status-box {
-      margin-top: 28px;
-      border: 1px solid #999;
-      padding: 8px 10px;
-      display: inline-block;
-      font-family: "Courier New", monospace;
-      font-size: 11px;
-      background: #efeee6;
     }
 
     .gif-area {
@@ -118,27 +75,19 @@
 
     .gif-area img {
       width: 185px;
-      max-width: 60%;
+      max-width: 65%;
       height: auto;
-      border: 1px solid #777;
-      display: inline-block;
-    }
-
-    .gif-caption {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 9px;
-      color: #555;
-      margin-top: 4px;
-      text-align: right;
+      border: 3px ridge #bcb7a3;
     }
 
     .footer {
       margin-top: 30px;
       padding-top: 8px;
-      border-top: 1px solid #777;
+      border-top: 1px solid #888;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
-      color: #555555;
+      color: #555;
+      text-align: left;
     }
 
     #boras-report {
@@ -146,7 +95,7 @@
     }
 
     .back-link {
-      color: #111111;
+      color: #111;
       text-decoration: underline;
       cursor: pointer;
       font-size: 16px;
@@ -154,7 +103,8 @@
 
     @media screen and (max-width: 600px) {
       .page {
-        padding: 30px 20px 45px 20px;
+        margin: 18px 12px;
+        padding: 28px 18px 34px 18px;
       }
 
       h1 {
@@ -174,53 +124,32 @@
 
 <body>
 
-  <!-- STARTSIDA -->
-
   <div class="page" id="home">
 
-    <div class="micro-nav">
-      <span>home</span>
-      <span>reports</span>
-      <span>archive</span>
-    </div>
+    <div class="corner-star">✦</div>
 
     <h1>choose your report</h1>
-
-    <div class="subline">
-      select template below
-    </div>
 
     <div class="report-list">
 
       <div class="report">
         <a onclick="openBorasReport()">borås-tillståndsrapport</a>
-        <span class="active-dot">● active</span>
-        <div class="meta">condition documentation / borås</div>
       </div>
 
       <div class="report">
         <a onclick="notReady()">condition-report</a>
-        <div class="meta">template unavailable</div>
       </div>
 
       <div class="report">
         <a onclick="notReady()">iteration-report</a>
-        <div class="meta">template unavailable</div>
       </div>
 
-    </div>
-
-    <div class="status-box">
-      3 templates / 1 active / system ok
     </div>
 
     <div class="gif-area">
       <img
         src="https://i.makeagif.com/media/10-17-2022/gS4Ma2.gif"
         alt="Pipilotti Rist – Ever is Over All">
-      <div class="gif-caption">
-        pipilotti rist / ever is over all
-      </div>
     </div>
 
     <div class="footer">
@@ -230,8 +159,6 @@
   </div>
 
 
-  <!-- BORÅS-RAPPORT -->
-
   <div class="page" id="boras-report">
 
     <a class="back-link" onclick="goHome()">← tillbaka</a>
@@ -240,15 +167,12 @@
 
     <div style="border-top:1px solid #777; margin-bottom:30px;"></div>
 
-    <p>
-      rapportformuläret bygger vi här.
-    </p>
+    <p>rapportformuläret bygger vi här.</p>
 
   </div>
 
 
   <script>
-
     function openBorasReport() {
       document.getElementById("home").style.display = "none";
       document.getElementById("boras-report").style.display = "block";
@@ -264,7 +188,6 @@
     function notReady() {
       alert(" ");
     }
-
   </script>
 
 </body>
